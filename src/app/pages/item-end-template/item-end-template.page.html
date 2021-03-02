@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Templates</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-item lines="full">
+    <a href="{{'item-end-template' | wikiUrl}}">
+      GitHub
+    </a>
+  </ion-item>
+  <ion-item lines="full">
+    <ion-label class="ion-text-wrap">
+      Setting item end template.
+    </ion-label>
+  </ion-item>
+  <ion-item>
+    <ion-label>Port</ion-label>
+    <ionic-selectable [(ngModel)]="port" itemValueField="id"
+      itemTextField="name" [items]="ports">
+      <ng-template ionicSelectableItemEndTemplate let-port="item"
+        let-isPortSelected="isItemSelected">
+        <img class="country-flag" [src]="port.country.flagUrl" />
+      </ng-template>
+    </ionic-selectable>
+  </ion-item>
+</ion-content>
